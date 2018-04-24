@@ -1,0 +1,44 @@
+/**
+ * Created by CJB on 24/04/2018.
+ */
+
+// you can also use imports, for example:
+// import java.util.*;
+
+// you can write to stdout for debugging purposes, e.g.
+// System.out.println("this is a debug message");
+
+public class Solution {
+    public static int solution(int A, int B){
+        //Write your code in Java SE 8 here
+
+        String AA = A + "";
+        String BB = B + "";
+        String C = "";
+        int result;
+        boolean v = true;
+
+        while (v == true){
+            if (AA.length() > 0 || BB.length() > 0) {
+                if (AA.length() > 0) {
+                    C = C + AA.charAt(0);
+                    AA = AA.substring(1, AA.length());
+                }
+                if (BB.length() > 0){
+                    C = C + BB.charAt(0);
+                    BB = BB.substring(1, BB.length());
+                }
+                else {
+                    v = false;
+                }
+            }
+        }
+        result = Integer.parseInt(C);
+        return result;
+    }
+
+    public static void main(String []args){
+
+        System.out.println("Result" +  solution(12345, 678));
+    }
+}
